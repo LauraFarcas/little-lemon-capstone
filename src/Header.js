@@ -1,20 +1,17 @@
 import React from 'react';
 import logo from './assets/LittleLemonLogo.png';
+import Nav from './Nav';
+import './Header.css';
 
 const Header = () => {
     return (
         <header>
-            <div>
-                <img src={logo} alt="Little Lemon Logo" />
+            <div className="container grid nav-bar">
+                <div className="nav-bar-logo">
+                    <img src={logo} alt="Little Lemon Logo" />
+                </div>
                 <h1>Little Lemon</h1>
-                <nav>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#menu">Menu</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </nav>
+                <Nav />
             </div>
         </header>
     );

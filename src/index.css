@@ -5,9 +5,117 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 10px;
+  justify-items: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+#root {
+width: 100%;
+max-width: 1200px;
+}
+
+.container {
+  max-width: 61.625rem;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid {
+  display: grid;
+}
+
+.header, .main, .footer {
+  grid-column: 1 / -1;  /* Span full width of the grid */
+}
+h1, h2, h3, h4, h5, h6 {
+  margin: 0.5em 0;
+  color: #333;
+  line-height: 1;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1.75em;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+h5 {
+  font-size: 1.25em;
+  font-weight: bold;
+}
+
+h6 {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+p {
+  margin: 0.5em 0;
+  color: #666;
+  line-height: 1.5;
+  font-size: 1em;
+}
+
+span {
+  color: #333;
+  font-size: 1em;
+}
+
+a {
+  color: #0077cc;
+  text-decoration: none;
+  font-size: 1em;
+}
+
+nav {
+  padding: 1em;
+  width: 100%;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav ul li {
+  margin: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  padding: 0.5em 1em;
+  display: block;
+}
+
+nav ul li a:hover {
+  background-color: #555;
 }
