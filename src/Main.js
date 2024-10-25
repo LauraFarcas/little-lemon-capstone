@@ -1,11 +1,18 @@
 import React from 'react';
+import BookingPage from './components/BookingPage';
+import Homepage from './components/Homepage';
+import { Routes, Route } from 'react-router-dom';
+import Specials from './components/Specials';
 
 const Main = () => {
     return (
-        <div className="container grid">
-            <h1>Welcome to Little Lemon Restaurant</h1>
-            <p>A great place to eat</p>
-        </div>
+        <>
+            <Routes>
+                <Route path="/" element={<Homepage />} />
+                <Route path="/booking" element={<BookingPage />} />
+                <Route path="/menu" element={<Specials />} />
+            </Routes>
+        </>
     );
 };
 
