@@ -1,77 +1,83 @@
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
 const BookingForm = (props) => {
+    const validationSchema = Yup.object({
+        name: Yup.string()
+            .min(2, "Must be at least 2 characters")
+            .required("Name is required"),
+        date: Yup.date()
+            .min(new Date(new Date().setDate(new Date().getDate() - 1)), "Date cannot be in the past")
+            .required("Date is required"),
+        time: Yup.string().required("Time is required"),
+        guests: Yup.number()
+            .min(1, "Must be at least 1 guest")
+            .max(10, "Cannot exceed 10 guests")
+            .required("Number of guests is required")
+    });
     const { formData, handleChange, handleSubmit, availableTimes } = props;
     console.log('BookingForm Available times:', availableTimes);
-    const handleSubmitForm = (e) => {
-        e.preventDefault();
-        handleSubmit(formData);
-        console.log('Form submitted:', formData);
-    };
 
     return (
-        <form onSubmit={handleSubmitForm}>
-            <div>
-                <label htmlFor="res-name">Name:</label>
-                <input
-                    type="text"
-                    id="res-name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                />
-            </div>
-            <div>
-                <label htmlFor="res-date">Choose Date:</label>
-                <input
-                    type="date"
-                    id="res-date"
-                    name="date"
-                    value={formData.date}
-                    onChange={handleChange}
-                    required
-                />
-            </div>
-            <div>
-                <label htmlFor="res-time">Choose Time:</label>
-                <select
-                    type="time"
-                    id="res-time"
-                    name="time"
-                    value={formData.time}
-                    onChange={handleChange}
-                    required
-                >
-                    <option value="">Select Time</option>
-                    {availableTimes.map((time) => (
-                        <option key={time} value={time}>
-                            {time}
-                        </option>
-                    ))}
-                </select>
-            </div>
-            <div>
-                <label htmlFor="guests">Number of Guests:</label>
-                <input
-                    type="number"
-                    id="guests"
-                    name="guests"
-                    value={formData.guests}
-                    onChange={handleChange}
-                    min="1"
-                    max="10"
-                    required
-                />
-            </div>
-            <div>
-                <label htmlFor="occasion">Occasion:</label>
-                <select id="occasion" name="occasion">
-                    <option value="birthday">Birthday</option>
-                    <option value="anniversary">Anniversary</option>
-                    <option value="other">Other</option>
-                </select>
-            </div>
-            <button type="submit">Make your reservation</button>
-        </form>
+        <Formik
+            initialValues={formData}
+            validationSchema={validationSchema}
+            onSubmit={(values, { setSubmitting }) => {
+                handleSubmit(values);
+                console.log('Form submitted:', values);
+                setSubmitting(false);
+            }}
+        >
+            {({ isSubmitting, setFieldValue }) => (
+                <Form>
+                    <div>
+                        <label htmlFor="res-name">Name:</label>
+                        <Field type="text" id="res-name" name="name" />
+                        <ErrorMessage name="name" component="div" />
+                    </div>
+                    <div>
+                        <label htmlFor="res-date">Choose Date:</label>
+                        <Field
+                            type="date"
+                            id="res-date"
+                            name="date"
+                            onChange={(e) => {
+                                handleChange(e);
+                                setFieldValue('date', e.target.value);
+                            }}
+                        />
+                        <ErrorMessage name="date" component="div" />
+                    </div>
+                    <div>
+                        <label htmlFor="res-time">Choose Time:</label>
+                        <Field as="select" id="res-time" name="time">
+                            <option value="">Select Time</option>
+                            {availableTimes.map((time) => (
+                                <option key={time} value={time}>
+                                    {time}
+                                </option>
+                            ))}
+                        </Field>
+                        <ErrorMessage name="time" component="div" />
+                    </div>
+                    <div>
+                        <label htmlFor="guests">Number of Guests:</label>
+                        <Field type="number" id="guests" name="guests" />
+                        <ErrorMessage name="guests" component="div" />
+                    </div>
+                    <div>
+                        <label htmlFor="occasion">Occasion:</label>
+                        <Field as="select" id="occasion" name="occasion">
+                            <option value="birthday">Birthday</option>
+                            <option value="anniversary">Anniversary</option>
+                            <option value="other">Other</option>
+                        </Field>
+                    </div>
+                    <button type="submit" disabled={isSubmitting}>
+                        Make your reservation
+                    </button>
+                </Form>
+            )}
+        </Formik>
     );
 };
 

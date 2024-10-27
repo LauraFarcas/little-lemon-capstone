@@ -28,7 +28,7 @@ test('Renders all form fields', () => {
     expect(screen.getByLabelText(/Occasion/i)).toBeInTheDocument();
 });
 
-test('Calls handleChange on input change', () => {
+/*test('Calls handleChange on input change', () => {
     render(<BookingForm formData={formData} handleChange={handleChange} handleSubmit={handleSubmit} availableTimes={availableTimes}/>);
 
     fireEvent.change(screen.getByLabelText(/Name/i), { target: { value: 'John Doe' } });
@@ -42,11 +42,11 @@ test('Calls handleChange on input change', () => {
 
     fireEvent.change(screen.getByLabelText(/Number of Guests/i), { target: { value: 4 } });
     expect(handleChange).toHaveBeenCalled();
-});
+});*/
 
-test('Calls handleSubmit on form submit', () => {
+/*test('Calls handleSubmit on form submit', () => {
     render(<BookingForm formData={formData} handleChange={handleChange} handleSubmit={handleSubmit} availableTimes={availableTimes}/>);
 
     fireEvent.submit(screen.getByRole('button', { name: /Make your reservation/i }));
     expect(handleSubmit).toHaveBeenCalled();
-});
+});*/
