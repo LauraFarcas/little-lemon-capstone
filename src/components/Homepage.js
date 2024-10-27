@@ -18,7 +18,6 @@ const Home = () => {
       <Specials />
       <CustomersSay />
       <Chicago  />
-      <BookingPage />
     </>
   );
 };
