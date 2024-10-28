@@ -1,23 +1,29 @@
 .nav-bar-logo img {
     max-width: 15.625rem;
-  }
-  .nav-bar {
-    grid-template-columns: auto auto auto;
-    min-height: 6.25rem;
-    align-items: center;
-    background-color: #fff;
-    display: flex;
-    height: 4rem;
-    justify-content: space-between;
-    margin: 0 auto;
-    max-width: 65rem;
-    padding: 1rem;
-  }
+}
+.nav-bar {
+  grid-template-columns: auto auto auto;
+  min-height: 6.25rem;
+  align-items: center;
+  background-color: #fff;
+  display: flex;
+  height: 4rem;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 65rem;
+  padding: 1rem;
+}
 
-  .nav-bar-logo {
-    grid-column: 1;
-    justify-self: start;
-    align-self: center;
-    line-height: 0;
-    height: 50px;
-  }
+.nav-bar-logo {
+  grid-column: 1;
+  justify-self: start;
+  align-self: center;
+  line-height: 0;
+  height: 50px;
+}
+
+ul li a {
+  color: #000;
+  font-size: 1.1em;
+  text-decoration: none;
+}

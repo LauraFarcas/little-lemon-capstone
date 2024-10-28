@@ -36,3 +36,426 @@
     transform: rotate(360deg);
   }
 }
+
+.hero, .title {
+  text-align: left;
+}
+.title {
+  color: #f4ce14;
+  font-size: 3.5rem;
+}
+
+.subtitle, p {
+  color: #fff;
+}
+
+.subtitle {
+  font-size: 2rem;
+}
+
+h3 {
+  display: block;
+  font-size: 1.5em;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  unicode-bidi: isolate;
+}
+
+h1 {
+  display: block;
+  font-size: 2em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  unicode-bidi: isolate;
+}
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  unicode-bidi: isolate;
+}
+
+.button {
+  background: #f4ce14;
+  background-color: #f4ce14;
+  border: .1875rem solid #f4ce14;
+  border-radius: .5rem;
+  color: #495e57;
+  font-size: 1em;
+  font-weight: 700;
+  padding: .5rem 1rem;
+}
+
+.image {
+  border-radius: 16px;
+  grid-area: image;
+  height: 20rem;
+  justify-self: end;
+  object-fit: cover;
+  width: 100%;
+}
+
+.specials-title {
+  line-height: 10px;
+}
+
+.specials-header {
+  grid-column-gap: 2rem;
+  align-items: center;
+  display: grid;
+  grid-template: "info image";
+  grid-template-columns: 85fr 15fr;
+  margin-bottom: 2rem;
+}
+
+.specials-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.specials {
+  height: 100%;
+  margin: 0 auto;
+  max-width: 65rem;
+  padding: 2.5rem 0;
+}
+
+.food-card {
+  background: #edefee;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 27rem;
+  overflow: hidden;
+  width: 18rem;
+}
+
+.food-card-image {
+  width: 100%;
+}
+
+.food-card-image img {
+  width: 100%;
+}
+
+.food-card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 1.5rem;
+}
+
+.food-card-body-header {
+  flex-grow: 1;
+}
+
+.food-card-body-title-header {
+  align-items: baseline;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.food-card-title {
+  color: #000;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.food-card-price {
+  color: #ee9972;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.food-card-description {
+  color: #495e57;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.food-card-delivery {
+  align-content: flex-end;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 1rem;
+}
+
+.food-card-delivery-title {
+  color: #000;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 .5rem 0 0;
+}
+
+.testimonials-background {
+  background: #495e57;
+}
+
+.testimonials {
+  height: 100%;
+  margin: 0 auto;
+  max-width: 65rem;
+  padding: 2rem 0;
+}
+
+.testimonials-header{
+  align-items: center;
+  display: flex;
+  grid-template-columns: 85fr 15fr;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.testimonial-title {
+  color: #fff;
+  line-height: 10px;
+}
+
+.testimonials-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.testimonial-card {
+  background: #fff;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 10rem;
+  overflow: hidden;
+  padding: 1rem;
+  width: 18rem;
+}
+
+.testimonial-rating span{
+  color: #f4ce14;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.testimonial-card-container {
+  display: flex;
+  padding: 1rem 0;
+}
+
+.testimonial-profile-picture {
+  border-radius: 5px;
+  object-fit: cover;
+  width: 50px;
+}
+
+.testimonial-card-author {
+  color: #000;
+  font-weight: 700;
+  margin-left: 1rem;
+}
+
+.testimonial-description {
+  color: #4a4a4a;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  font-size: 14px;
+  justify-content: space-between;
+}
+
+.hero-background {
+  background: #495e57;
+  display: flex;
+  height: 100%;
+}
+
+.about {
+  grid-column-gap: 2rem;
+  align-items: center;
+  display: grid;
+  grid-template: "info image";
+  grid-template-columns: 60fr 40fr;
+  height: 100%;
+  margin: 0 auto;
+  max-width: 65rem;
+  padding: 5rem 0;
+}
+
+.about-image-bruchetta, .about-image-restaurant {
+  border-radius: 16px;
+  grid-area: image;
+  height: 20rem;
+  justify-self: end;
+  object-fit: cover;
+  width: 100%;
+}
+
+.about-image-bruchetta {
+  margin-right: 5rem;
+  margin-top: 5rem;
+}
+
+.about-title {
+  font-family: Markazi Text;
+  font-size: 56px;
+  font-weight: medium;
+  line-height: 30px;
+}
+
+.about-subtitle {
+  color: #333;
+  font-family: Markazi Text;
+  font-size: 40px;
+  line-height: 20px;
+}
+
+.about-description {
+  color: #000;
+  padding-right: 6rem;
+}
+#root {
+    width: 100%;
+}
+
+.footer-container {
+  grid-column-gap: 1.5rem;
+  display: grid;
+  grid-template-areas: "icon sitemap contact social";
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  height: 100%;
+  margin: 0 auto;
+  max-width: 65rem;
+  padding: 2rem 0;
+  width: 100%;
+}
+
+.footer-logo {
+  height: 170px;
+  object-fit: contain;
+}
+
+.footer-site-map {
+  align-self: start;
+  grid-area: sitemap;
+}
+
+.footer-title {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 1rem;
+}
+
+.footer-item {
+  color: #fff;
+  display: flex;
+  margin: .5rem 0;
+  text-decoration: none;
+}
+
+.footer-contact {
+  grid-area: contact;
+}
+
+.footer-social {
+  grid-area: social;
+}
+
+.footer {
+  background: #495e57;
+  height: 100%;
+  width: 100%;
+}
+
+.reservation {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 65rem;
+  width: 100vw;
+}
+.reservation-card {
+  background: #495e57;
+  border-radius: 16px;
+  padding: 2rem;
+  width: 50%;
+}
+
+.reservation-title {
+  background: #495e57;
+  color: #fff;
+  display: flex;
+  font-size: 40px;
+  font-weight: 600;
+  justify-content: center;
+  margin-bottom: 2rem;
+  margin-top: 0;
+}
+
+.reservation-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.containter-item-title {
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+}
+
+input, select {
+  -webkit-padding-end: 1rem;
+  -webkit-padding-start: 1rem;
+  background: #fff;
+  border: .0625rem solid #e0e0e0;
+  border-radius: .375rem;
+  color: #495e57;
+  cursor: pointer;
+  height: 2.5rem;
+  outline: none;
+  padding-inline-end: 1rem;
+  padding-inline-start: 1rem;
+  transition: border-color .3s;
+}
+
+.reservation-button {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.inline-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+.inline-list li {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.reservation-card, .reservation-card h3 {
+  color: #fff;
+}
+
+.reservation-error {
+  color: #f4ce14;
+  margin: 0;
+}

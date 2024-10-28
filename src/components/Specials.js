@@ -1,22 +1,37 @@
 import React from 'react';
-
-const specials = [
-    { id: 1, name: 'Spaghetti Carbonara', price: '$12.99' },
-    { id: 2, name: 'Margherita Pizza', price: '$10.99' },
-    { id: 3, name: 'Caesar Salad', price: '$8.99' },
-];
+import { specials } from '../utils/specials';
+import uberImage from '../assets/uberSign.svg';
 
 const Specials = () => {
+    console.log(specials);
     return (
-        <div>
-            <h2>Today's Specials</h2>
-            <ul>
+        <div className='specials container grid'>
+            <div className='specials-header'>
+                <h1>Specials</h1>
+                <button className="button">Online Menu</button>
+            </div>
+            <div className='specials-content'>
                 {specials.map((special) => (
-                    <li key={special.id}>
-                        {special.name} - {special.price}
-                    </li>
+                    <div key={special.id} className="food-card">
+                        <div className="food-card-image">
+                            <img src={special.image} alt={special.name} height="200"/>
+                        </div>
+                        <div className="food-card-body">
+                            <div className="food-card-body-header">
+                                <div className="food-card-body-title-header">
+                                    <p className="food-card-title">{special.name}</p>
+                                    <p className="food-card-price">{special.price}</p>
+                                </div>
+                                <p className="food-card-description">{special.description}</p>
+                            </div>
+                            <div className="food-card-delivery">
+                                <p className="food-card-delivery-title">Order a delivery</p>
+                                <img src={uberImage} alt="uber eats"/>
+                            </div>
+                        </div>
+                    </div>
                 ))}
-            </ul>
+            </div>
         </div>
     );
 };

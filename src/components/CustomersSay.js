@@ -1,20 +1,7 @@
 import React from 'react';
 import './CustomersSay.css';
 
-const testimonials = [
-    {
-        name: 'John Doe',
-        image: 'path/to/john-image.jpg',
-        rating: 5,
-        comment: 'Great service and delicious food!',
-    },
-    {
-        name: 'Jane Smith',
-        image: 'path/to/jane-image.jpg',
-        rating: 4,
-        comment: 'Lovely atmosphere and friendly staff.',
-    },
-];
+import {testimonials} from '../utils/testimonials';
 
 const StarRating = ({ rating }) => {
     const stars = [];
@@ -30,19 +17,25 @@ const StarRating = ({ rating }) => {
 
 const CustomersSay = () => {
     return (
-        <div className="testimonials">
-            <h2>What Our Customers Say</h2>
-            <div className="testimonials-list">
-                {testimonials.map((testimonial, index) => (
-                    <div key={index} className="testimonial">
-                        <img src={testimonial.image} alt={`${testimonial.name}`} className="customer-image" />
-                        <div className="customer-details">
-                            <h3>{testimonial.name}</h3>
-                            <StarRating rating={testimonial.rating} />
-                            <p>{testimonial.comment}</p>
+        <div className="testimonials-background">
+            <div className="testimonials">
+                <div className="testimonials-header">
+                    <h1 className="testimonial-title">Testimonials</h1>
+                </div>
+                <div className="testimonials-list">
+                    {testimonials.map((testimonial, index) => (
+                        <div key={index} className="testimonial-card">
+                            <div className="testimonial-rating">
+                                <StarRating rating={testimonial.rating} />
+                            </div>
+                            <div className="testimonial-card-container">
+                                <img src={testimonial.image} alt={`${testimonial.name}`} className="testimonial-profile-picture" />
+                                <p className="testimonial-card-author">{testimonial.name}</p>
+                            </div>
+                            <p className="testimonial-description">{testimonial.comment}</p>
                         </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
         </div>
     );

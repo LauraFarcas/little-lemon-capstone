@@ -29,13 +29,13 @@ const BookingForm = (props) => {
         >
             {({ isSubmitting, setFieldValue }) => (
                 <Form>
-                    <div>
-                        <label htmlFor="res-name">Name:</label>
+                    <div className="reservation-container">
+                        <label className="containter-item-title" htmlFor="res-name">Name:</label>
                         <Field type="text" id="res-name" name="name" />
-                        <ErrorMessage name="name" component="div" />
                     </div>
-                    <div>
-                        <label htmlFor="res-date">Choose Date:</label>
+                    <ErrorMessage className="reservation-error" name="name" component="div" />
+                    <div className="reservation-container">
+                        <label className="containter-item-title" htmlFor="res-date">Choose Date:</label>
                         <Field
                             type="date"
                             id="res-date"
@@ -45,10 +45,10 @@ const BookingForm = (props) => {
                                 setFieldValue('date', e.target.value);
                             }}
                         />
-                        <ErrorMessage name="date" component="div" />
                     </div>
-                    <div>
-                        <label htmlFor="res-time">Choose Time:</label>
+                    <ErrorMessage className="reservation-error" name="date" component="div" />
+                    <div className="reservation-container">
+                        <label className="containter-item-title" htmlFor="res-time">Choose Time:</label>
                         <Field as="select" id="res-time" name="time">
                             <option value="">Select Time</option>
                             {availableTimes.map((time) => (
@@ -57,24 +57,26 @@ const BookingForm = (props) => {
                                 </option>
                             ))}
                         </Field>
-                        <ErrorMessage name="time" component="div" />
                     </div>
-                    <div>
-                        <label htmlFor="guests">Number of Guests:</label>
+                    <ErrorMessage className="reservation-error" name="time" component="div" />
+                    <div className="reservation-container">
+                        <label className="containter-item-title" htmlFor="guests">Number of Guests:</label>
                         <Field type="number" id="guests" name="guests" />
-                        <ErrorMessage name="guests" component="div" />
                     </div>
-                    <div>
-                        <label htmlFor="occasion">Occasion:</label>
+                    <ErrorMessage className="reservation-error" name="guests" component="div" />
+                    <div className="reservation-container">
+                        <label className="containter-item-title" htmlFor="occasion">Occasion:</label>
                         <Field as="select" id="occasion" name="occasion">
                             <option value="birthday">Birthday</option>
                             <option value="anniversary">Anniversary</option>
                             <option value="other">Other</option>
                         </Field>
                     </div>
-                    <button type="submit" disabled={isSubmitting}>
-                        Make your reservation
-                    </button>
+                    <div className="reservation-button">
+                        <button className="button" type="submit" disabled={isSubmitting}>
+                            Make your reservation
+                        </button>
+                    </div>
                 </Form>
             )}
         </Formik>

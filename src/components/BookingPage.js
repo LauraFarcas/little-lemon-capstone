@@ -37,44 +37,30 @@ const BookingPage = (props) => {
 
     return (
         <>
-            <h2>Table reservation</h2>
-            <BookingForm formData={formData} handleChange={handleChange} handleSubmit={handleSubmit} availableTimes={filteredAvailableTimes}/>
-            {formData.date && (
-                <>
-                    <h2>Available Slots</h2>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Time</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {filteredAvailableTimes.map((slot, index) => (
-                                <tr key={`${index}`}>
-                                    <td>{slot}</td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                    <h2>Booked Slots</h2>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Time</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {bookedSlots
-                                .filter(slot => slot.date === formData.date)
-                                .map((slot, index) => (
-                                    <tr key={`${slot.date}-${slot.time}-${index}`}>
-                                        <td>{slot.time}</td>
-                                    </tr>
+            <div className="reservation">
+                <div className="reservation-card">
+                    <h1 className="reservation-title">Table reservation</h1>
+                    <BookingForm formData={formData} handleChange={handleChange} handleSubmit={handleSubmit} availableTimes={filteredAvailableTimes}/>
+                    {formData.date && (
+                        <>
+                            <h3>Available Slots</h3>
+                            <ul className="inline-list">
+                                {filteredAvailableTimes.map((slot, index) => (
+                                    <li key={`${index}`}>{slot}</li>
                                 ))}
-                        </tbody>
-                    </table>
-                </>
-            )}
+                            </ul>
+                            <h3>Booked Slots</h3>
+                            <ul className="inline-list">
+                                {bookedSlots
+                                    .filter(slot => slot.date === formData.date)
+                                    .map((slot, index) => (
+                                        <li key={`${slot.date}-${slot.time}-${index}`}>{slot.time}</li>
+                                    ))}
+                            </ul>
+                        </>
+                    )}
+                </div>
+            </div>
         </>
     );
 };
